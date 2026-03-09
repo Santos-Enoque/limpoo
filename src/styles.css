@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(0.10 0.01 260 / 0.85);
+  --foreground: oklch(0.95 0 0);
+  --card: oklch(0.14 0.015 260 / 0.7);
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.16 0.015 260 / 0.8);
+  --popover-foreground: oklch(0.95 0 0);
+  --primary: oklch(0.68 0.18 250);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.20 0.01 260 / 0.6);
+  --secondary-foreground: oklch(0.95 0 0);
+  --muted: oklch(0.22 0.01 260 / 0.5);
+  --muted-foreground: oklch(0.58 0 0);
+  --accent: oklch(0.68 0.18 250);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.6 0.2 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.40 0.02 260 / 0.15);
+  --input: oklch(0.18 0.01 260 / 0.6);
+  --ring: oklch(0.68 0.18 250);
+  --radius: 0.75rem;
+  --sidebar: oklch(0.12 0.015 260 / 0.7);
+  --sidebar-foreground: oklch(0.95 0 0);
+  --sidebar-primary: oklch(0.68 0.18 250);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.24 0.02 260 / 0.5);
+  --sidebar-accent-foreground: oklch(0.95 0 0);
+  --sidebar-border: oklch(0.40 0.02 260 / 0.12);
+  --sidebar-ring: oklch(0.68 0.18 250);
+}
+
+@theme inline {
+  --font-sans: "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont,
+    system-ui, sans-serif;
+  --font-mono: "SF Mono", "Fira Code", monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply text-foreground;
+    background: transparent;
+    overflow: hidden;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+}
+
+@layer utilities {
+  /* Liquid glass panel */
+  .glass-panel {
+    background: oklch(0.16 0.02 260 / 0.55);
+    backdrop-filter: blur(24px) saturate(1.4);
+    -webkit-backdrop-filter: blur(24px) saturate(1.4);
+    border: 1px solid oklch(0.60 0.02 260 / 0.12);
+    box-shadow:
+      inset 0 0.5px 0 oklch(1 0 0 / 0.06),
+      0 8px 32px oklch(0 0 0 / 0.3),
+      0 2px 8px oklch(0 0 0 / 0.15);
+  }
+
+  /* Glass sidebar */
+  .glass-sidebar {
+    background: oklch(0.12 0.015 260 / 0.6);
+    backdrop-filter: blur(32px) saturate(1.5);
+    -webkit-backdrop-filter: blur(32px) saturate(1.5);
+    border-right: 1px solid oklch(0.60 0.02 260 / 0.1);
+  }
+
+  /* Glass titlebar */
+  .glass-titlebar {
+    background: oklch(0.14 0.015 260 / 0.65);
+    backdrop-filter: blur(32px) saturate(1.5);
+    -webkit-backdrop-filter: blur(32px) saturate(1.5);
+    border-bottom: 1px solid oklch(0.60 0.02 260 / 0.1);
+  }
+
+  /* Scan button with gradient */
+  .scan-button {
+    background: linear-gradient(135deg, oklch(0.65 0.2 250) 0%, oklch(0.55 0.18 280) 100%);
+    box-shadow:
+      0 4px 20px oklch(0.65 0.2 250 / 0.4),
+      0 2px 8px oklch(0 0 0 / 0.2),
+      inset 0 1px 0 oklch(1 0 0 / 0.15);
+  }
+  .scan-button:hover {
+    box-shadow:
+      0 6px 28px oklch(0.65 0.2 250 / 0.5),
+      0 2px 8px oklch(0 0 0 / 0.2),
+      inset 0 1px 0 oklch(1 0 0 / 0.2);
+  }
+
+  /* Hide scrollbar but keep scrolling */
+  .scrollbar-hidden {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Slow spin for scan animation */
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .animate-spin-slow {
+    animation: spin-slow 3s linear infinite;
+  }
+
+  @keyframes ping-slow {
+    0% { transform: scale(1); opacity: 0.3; }
+    100% { transform: scale(1.4); opacity: 0; }
+  }
+  .animate-ping-slow {
+    animation: ping-slow 2s ease-out infinite;
+  }
+}
