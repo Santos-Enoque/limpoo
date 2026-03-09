@@ -33,7 +33,7 @@ function App() {
   return (
     <div
       className="h-screen overflow-hidden rounded-xl relative"
-      style={{ background: "oklch(0.10 0.015 260 / 0.88)" }}
+      style={{ background: "linear-gradient(145deg, oklch(0.10 0.02 270 / 0.92) 0%, oklch(0.08 0.025 300 / 0.90) 40%, oklch(0.09 0.02 240 / 0.88) 100%)" }}
     >
       <TitleBar activeTab={activeTab} onTabChange={setActiveTab} />
 

@@ -189,12 +189,12 @@ export function JunkView({ preloadedJunk }: JunkViewProps) {
       <div
         className="absolute left-[76px] top-10 bottom-3 right-3 z-10 flex flex-col rounded-2xl overflow-hidden"
         style={{
-          background: "oklch(0.12 0.02 260 / 0.82)",
+          background: "linear-gradient(160deg, oklch(0.14 0.025 265 / 0.82) 0%, oklch(0.11 0.03 290 / 0.78) 50%, oklch(0.13 0.02 245 / 0.80) 100%)",
           backdropFilter: "blur(32px) saturate(1.5)",
           WebkitBackdropFilter: "blur(32px) saturate(1.5)",
-          border: "1px solid oklch(0.60 0.02 260 / 0.12)",
+          border: "1px solid oklch(0.55 0.06 275 / 0.14)",
           boxShadow:
-            "0 12px 48px oklch(0 0 0 / 0.4), 0 4px 16px oklch(0 0 0 / 0.2), inset 0 0.5px 0 oklch(1 0 0 / 0.06)",
+            "0 12px 48px oklch(0 0 0 / 0.4), 0 4px 16px oklch(0 0 0 / 0.2), inset 0 0.5px 0 oklch(1 0 0 / 0.08), inset 0 0 0 0.5px oklch(0.60 0.1 270 / 0.06)",
         }}
       >
         {/* Header */}
